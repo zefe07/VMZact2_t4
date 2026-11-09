@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Lista de Productos</title>
+</head>
+<body>
+    <h1>Lista de Productos</h1>
+    <p><strong>Autor del proyecto:</strong> <span th:text="${autor}"></span></p>
+    
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Precio</th>
+            <th>Categoría</th>
+        </tr>
+        <tr th:each="prod, iter : ${productos}">
+            <td th:text="${iter.index}">1</td>
+            <td th:text="${prod.nombre}">Nombre</td>
+            <td th:text="${prod.precio}">0.0</td>
+            <td th:text="${prod.categoria}">Categoria</td>
+        </tr>
+    </table>
+    <br>
+    <a href="/productos/nuevo">Agregar Producto</a>
+</body>
+</html>
